@@ -104,3 +104,50 @@ class RandomWordsSate extends State<RandomWords> {
     );
   }
 }
+
+class MyText extends StatelessWidget {
+  // 组件的参数
+  final String text;
+
+  // 组件的构造函数
+  MyText(this.text);
+
+  // 组件的实现部分
+  Widget build(context) {
+    return new Text(
+      text,
+      style: new TextStyle(fontSize: 40.0),
+    );
+  }
+}
+
+class Counter extends StatefulWidget {
+  // 组件的参数
+  final String title;
+
+  // 组件的参数
+  Counter({Key key, this.title}): super(key: key);
+
+  // 没有build方法。但有createState()方法
+  @override
+  _MyHomePageState createState() => new _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  // 状态
+  int counter = 0;
+  
+  void increaseCount() {
+    setState(() {
+      this.counter ++;
+    }
+  }
+
+  // build 方法
+  Widget build(context) {
+    return new RaisedButton(
+      onPressed: increaseCount,
+      child: new Text("+1"),
+    );
+  }
+}
