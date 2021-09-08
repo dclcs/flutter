@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:demo/widgets/page_content.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  bool showPassword = false;
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('登录'),
+        title: Text('注册'),
       ),
       body: SafeArea(
         minimum: EdgeInsets.all(30),
@@ -27,19 +26,17 @@ class _LoginPageState extends State<LoginPage> {
             )),
             Padding(padding: EdgeInsets.all(10)),
             TextField(
-                obscureText: !showPassword,
+                obscureText: true,
                 decoration: InputDecoration(
                   labelText: '密码',
                   hintText: '请输入密码',
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                        showPassword ? Icons.visibility_off : Icons.visibility),
-                    onPressed: () {
-                      setState(() {
-                        showPassword = !showPassword;
-                      });
-                    },
-                  ),
+                )),
+            Padding(padding: EdgeInsets.all(10)),
+            TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: '确认密码',
+                  hintText: '请输入密码',
                 )),
             Padding(padding: EdgeInsets.all(10)),
             RaisedButton(
@@ -48,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                 //TODO: dasda
               },
               child: Text(
-                '登录',
+                '注册',
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -56,13 +53,13 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('还没有账号，'),
+                Text('已有账号，'),
                 TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, 'register');
+                      Navigator.pushReplacementNamed(context, 'login');
                     },
                     child: Text(
-                      '去注册',
+                      '去登录',
                       style: TextStyle(color: Colors.green),
                     ))
               ],
