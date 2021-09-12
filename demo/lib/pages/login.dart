@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:demo/widgets/page_content.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({Key key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text('还没有账号，'),
-                TextButton(
+                FlatButton(
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, 'register');
                     },

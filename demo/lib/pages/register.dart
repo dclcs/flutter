@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:demo/widgets/page_content.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  const RegisterPage({Key key}) : super(key: key);
 
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -54,7 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text('已有账号，'),
-                TextButton(
+                FlatButton(
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, 'login');
                     },

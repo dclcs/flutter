@@ -1,3 +1,4 @@
+import 'package:demo/widgets/common_image.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,7 @@ var imageHeight = 424.0;
 class CommonSwipper extends StatelessWidget {
   final List<String> images;
 
-  const CommonSwipper({Key? key, this.images = defaultImages})
-      : super(key: key);
+  const CommonSwipper({Key key, this.images = defaultImages}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,8 @@ class CommonSwipper extends StatelessWidget {
       child: Swiper(
         autoplay: true,
         itemBuilder: (BuildContext context, int index) {
-          return new Image.network(
-            images[index],
+          return CommonImage(
+            src: images[index],
             fit: BoxFit.fill,
           );
         },

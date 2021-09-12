@@ -1,11 +1,13 @@
 import 'package:demo/pages/home/tab_index/index.dart';
+import 'package:demo/pages/home/tab_info/index.dart';
+import 'package:demo/pages/home/tab_search/index.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/widgets/page_content.dart';
 
 List<Widget> tabViewList = [
   TabIndex(),
-  PageContent(name: "搜索"),
-  PageContent(name: "资讯"),
+  TabSearch(),
+  TabInfo(),
   PageContent(name: "我的"),
 ];
 
@@ -17,7 +19,7 @@ List<BottomNavigationBarItem> barItemList = [
 ];
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();

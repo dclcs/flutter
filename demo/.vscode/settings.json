@@ -1,5 +1,7 @@
 {
     "dart.flutterRunAdditionalArgs": [
-        "--no-sound-null-safety"
-    ]
+        // "--no-sound-null-safety"
+    ],
+    "dart.analysisServerFolding": false,
+    "dart.flutterSdkPath": "D://flutter1.7"
 }

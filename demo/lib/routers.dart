@@ -40,7 +40,7 @@ class Routes {
   });
 
   // 编写configureRoutes方法
-  static void configureRoutes(FluroRouter router) {
+  static void configureRoutes(Router router) {
     router.define(home, handler: _homeHandler);
     router.define(login, handler: _loginHandler);
     router.define(register, handler: _registerHandler);
