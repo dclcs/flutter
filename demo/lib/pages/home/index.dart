@@ -1,14 +1,14 @@
 import 'package:demo/pages/home/tab_index/index.dart';
 import 'package:demo/pages/home/tab_info/index.dart';
+import 'package:demo/pages/home/tab_profile/index.dart';
 import 'package:demo/pages/home/tab_search/index.dart';
 import 'package:flutter/material.dart';
-import 'package:demo/widgets/page_content.dart';
 
 List<Widget> tabViewList = [
   TabIndex(),
   TabSearch(),
   TabInfo(),
-  PageContent(name: "我的"),
+  TabProfile(),
 ];
 
 List<BottomNavigationBarItem> barItemList = [
