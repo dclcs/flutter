@@ -4,6 +4,7 @@ import 'package:demo/pages/not_found.dart';
 import 'package:demo/pages/register.dart';
 import 'package:demo/pages/room/room_detail/index.dart';
 import 'package:demo/pages/room_manage/index.dart';
+import 'package:demo/pages/room_manage/room_add/index.dart';
 import 'package:demo/pages/settings.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,10 @@ class Routes {
   static String home = "/";
   static String login = "/login";
   static String register = "/register";
-  static String roomDetail = "/room/:roomId";
+  static String roomDetail = "/roomDetail/:roomId";
   static String setting = "/setting";
   static String roomManage = "/roomManage";
-
+  static String roomAdd = '/roomAdd';
   // 定义路由处理函数
   static Handler _homeHandler =
       Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
@@ -48,6 +49,11 @@ class Routes {
     return RoomManagePage();
   });
 
+  static Handler _roomAddHandler =
+      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return RoomAddPage();
+  });
+
   static Handler _notFoundHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params) {
     return NotFoundPage();
@@ -61,6 +67,7 @@ class Routes {
     router.define(roomDetail, handler: _roomDetailHandler);
     router.define(setting, handler: _settingHandler);
     router.define(roomManage, handler: _roomManageHandler);
+    router.define(roomAdd, handler: _roomAddHandler);
     router.notFoundHandler = _notFoundHandler;
   }
 }

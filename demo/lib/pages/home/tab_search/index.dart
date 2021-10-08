@@ -1,4 +1,5 @@
-import 'package:demo/pages/home/tab_search/dataList.dart';
+import 'package:demo/pages/home/tab_search/data_list.dart';
+import 'package:demo/pages/home/tab_search/filter_bar/index.dart';
 import 'package:demo/widgets/room_list_item_widget.dart';
 import 'package:demo/widgets/search_bar/index.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class _TabSearchState extends State<TabSearch> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: SearchBar(
           showLocation: true,
           showMap: true,
@@ -27,8 +29,10 @@ class _TabSearchState extends State<TabSearch> {
       body: Column(
         children: <Widget>[
           Container(
-            height: 40.0,
-            child: Text('filterBar'),
+            height: 41.0,
+            child: FilterBar(
+              onChange: (data) {},
+            ),
           ),
           Expanded(
             child: ListView(
