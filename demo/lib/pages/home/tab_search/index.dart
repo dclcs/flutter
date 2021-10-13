@@ -1,4 +1,5 @@
 import 'package:demo/pages/home/tab_search/data_list.dart';
+import 'package:demo/pages/home/tab_search/filter_bar/filter_draw.dart';
 import 'package:demo/pages/home/tab_search/filter_bar/index.dart';
 import 'package:demo/widgets/room_list_item_widget.dart';
 import 'package:demo/widgets/search_bar/index.dart';
@@ -15,7 +16,9 @@ class _TabSearchState extends State<TabSearch> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: FilterDrawer(),
       appBar: AppBar(
+        actions: [Container()],
         elevation: 0,
         title: SearchBar(
           showLocation: true,
