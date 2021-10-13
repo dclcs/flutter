@@ -6,7 +6,7 @@ import 'package:demo/pages/room/room_detail/index.dart';
 import 'package:demo/pages/room_manage/index.dart';
 import 'package:demo/pages/room_manage/room_add/index.dart';
 import 'package:demo/pages/settings.dart';
-import 'package:fluro/fluro.dart';
+import 'package:fluro/fluro.dart' as route;
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -19,48 +19,48 @@ class Routes {
   static String roomManage = "/roomManage";
   static String roomAdd = '/roomAdd';
   // 定义路由处理函数
-  static Handler _homeHandler =
-      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  static route.Handler _homeHandler =
+  route.Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return HomePage();
   });
 
-  static Handler _loginHandler =
-      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  static route.Handler _loginHandler =
+  route.Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return LoginPage();
   });
 
-  static Handler _registerHandler =
-      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  static route.Handler _registerHandler =
+  route.Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return RegisterPage();
   });
 
-  static Handler _roomDetailHandler =
-      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  static route.Handler _roomDetailHandler =
+  route.Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return RoomDetailPage(roomId: params['roomId'][0]);
   });
 
-  static Handler _settingHandler =
-      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  static route.Handler _settingHandler =
+  route.Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return SettingPage();
   });
 
-  static Handler _roomManageHandler =
-      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  static route.Handler _roomManageHandler =
+  route.Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return RoomManagePage();
   });
 
-  static Handler _roomAddHandler =
-      Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  static route.Handler _roomAddHandler =
+  route.Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return RoomAddPage();
   });
 
-  static Handler _notFoundHandler = Handler(
+  static route.Handler _notFoundHandler = route.Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params) {
     return NotFoundPage();
   });
 
   // 编写configureRoutes方法
-  static void configureRoutes(Router router) {
+  static void configureRoutes(route.Router router) {
     router.define(home, handler: _homeHandler);
     router.define(login, handler: _loginHandler);
     router.define(register, handler: _registerHandler);

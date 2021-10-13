@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_networkimage/provider.dart';
-
 final networkURLReg = RegExp('^http');
 final localURLReg = RegExp('^static');
 
